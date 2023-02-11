@@ -1,3 +1,4 @@
+import transport.Bus;
 import transport.Car;
 
 public class Main {
@@ -9,11 +10,13 @@ public class Main {
                 "желтый",
                 2015,
                 "Россия",
+                130,
                 "4-х ступенчатая",
                 "седан",
                 "а111аа",
                 5,
-                true);
+                true,
+                null);
        System.out.println(lada);
 
 
@@ -24,11 +27,13 @@ public class Main {
                 "чёрный",
                 2020,
                 "Германия",
+                210,
                 "4-х ступенчатая",
                 "седан",
                 "а222аа",
                 5,
-                true);
+                true,
+                new Car.Key(true,true));
         System.out.println(audi);
 
         Car bmv = new Car(
@@ -38,11 +43,12 @@ public class Main {
                 "чёрный",
                 2021,
                 "Германия",
+                190,
                 "4-х ступенчатая",
                 "седан",
                 "а333аа",
                 5,
-                true);
+                true,new Car.Key(true,false));
         System.out.println(bmv);
         Car kia = new Car(
                 "KIA",
@@ -51,10 +57,12 @@ public class Main {
                 "красный",
                 2018,
                 "Южная Корея",
+                180,
                 "4-х ступенчатая",
                 "седан",
                 "а444аа",
-                4, true
+                4, true,
+                new Car.Key(false,true)
                 );
         System.out.println(kia);
         Car hyundai = new Car(
@@ -64,12 +72,23 @@ public class Main {
                 "оранжевый",
                 2016,
                 "Южная Корея",
+                200,
                 "4-х ступенчатая",
                 "седан",
                 "а555аа",
                 4,
-                true);
+                true,null);
         System.out.println(hyundai);
+        for (int i = 0; i < 3; i++) {
+            Bus bus = new Bus("Bus brand N" + i,
+                    "Bus model N" + i,
+                    2011 + i,
+                    "Russia",
+                    "green",
+                    110);
+            System.out.println(bus);
+
+        }
 
     }
 }
