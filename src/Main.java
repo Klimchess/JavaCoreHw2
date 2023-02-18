@@ -16,7 +16,7 @@ public class Main {
             Truck truck = new Truck("Truck brand N" + i,
                     "Bus model N" + i,
                     4.8,
-                    driverC);
+                    driverC, null, null);
             DriverD driverD = new DriverD("Driver cat. D №" + i,
                     true,
                     10 + i);

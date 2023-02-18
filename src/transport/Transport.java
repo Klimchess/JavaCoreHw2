@@ -5,9 +5,13 @@ public abstract class Transport<T extends Driver> implements Competing {
     private final String model;
     private double engineVolume;
     private T driver;
+    private BodyType bodyType;
+    private Size size;
+    private LoadCapacity loadCapacity;
 
 
-    public Transport(String brand, String model, double engineVolume, T driver) {
+
+    public Transport(String brand, String model, double engineVolume, T driver ) {
         this.brand = brand;
         if (brand == null || brand.isEmpty()) {
             brand = "default";
@@ -20,6 +24,30 @@ public abstract class Transport<T extends Driver> implements Competing {
         setDriver(driver);
 
 
+    }
+
+    public Size getSize() {
+        return size;
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
+    }
+
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 
     public String getBrand() {
@@ -52,9 +80,13 @@ public abstract class Transport<T extends Driver> implements Competing {
     public abstract void startMove();
 
     public abstract void finishMove();
+    public abstract Type getType();
+    public abstract void printType();
 
     @Override
     public String toString() {
-        return "Марка: " + brand + ", " + "модель:" + model + ", " + "объем двигателя " + engineVolume;
+        return "Марка: " + brand + ", "
+                + "модель:" + model + ", "
+                + "объем двигателя " + engineVolume;
     }
 }
