@@ -37,8 +37,9 @@ public class Car extends Transport<DriverB> {
     }
 
     @Override
-    public void passDiagnostics() {
+    public boolean passDiagnostics()   {
         System.out.println("Машина прошла диагностику");
+        return true;
     }
 
 

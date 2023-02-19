@@ -31,8 +31,8 @@ public class Main {
     }
 
     private static void printInfo(Transport<?> transport) {
-        System.out.println("Водитель " + transport.getDriver().getName() +
-                " управляет автомобилем " + transport.getBrand() + " и будет участвовать в заезде");
+        System.out.println(transport.passDiagnostics());
     }
+
 
 }

@@ -80,7 +80,7 @@ public abstract class Transport<T extends Driver> implements Competing {
     public abstract void finishMove();
     public abstract Type getType();
     public abstract void printType();
-    public abstract void passDiagnostics();
+    public abstract boolean passDiagnostics();
 
     @Override
     public String toString() {
