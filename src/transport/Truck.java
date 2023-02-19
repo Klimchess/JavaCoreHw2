@@ -51,4 +51,9 @@ public class Truck extends Transport<DriverC> {
             System.out.println(getLoadCapacity());
         }
     }
+
+    @Override
+    boolean passDiagnostics() throws TransportTypeException {
+        return passDiagnostics();
+    }
 }

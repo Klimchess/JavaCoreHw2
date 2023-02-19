@@ -36,6 +36,11 @@ public class Car extends Transport<DriverB> {
         }
     }
 
+    @Override
+    boolean passDiagnostics() throws TransportTypeException {
+        return passDiagnostics();
+    }
+
 
     public void pitStop() {
         System.out.println("Пит-стоп у машины");
