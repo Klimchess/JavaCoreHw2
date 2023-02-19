@@ -53,7 +53,7 @@ public class Truck extends Transport<DriverC> {
     }
 
     @Override
-    boolean passDiagnostics() throws TransportTypeException {
-        return passDiagnostics();
+    public void passDiagnostics()   {
+        System.out.println("Грузовик прошел диагностику");
     }
 }

@@ -9,10 +9,6 @@ public abstract class Transport<T extends Driver> implements Competing {
     private Size size;
     private LoadCapacity loadCapacity;
 
-    private boolean diagnosticsPassed;
-
-
-
     public Transport(String brand, String model, double engineVolume, T driver) {
         this.brand = brand;
         if (brand == null || brand.isEmpty()) {
@@ -24,14 +20,10 @@ public abstract class Transport<T extends Driver> implements Competing {
         }
         setEngineVolume(engineVolume);
         setDriver(driver);
-
-
     }
-
-    public void setDiagnosticsPassed(boolean diagnosticsPassed) {
-        this.diagnosticsPassed = diagnosticsPassed;
+    public boolean setDiagnosticsPassed(boolean diagnosticsPassed) {
+        return diagnosticsPassed;
     }
-
     public Size getSize() {
         return size;
     }
@@ -88,9 +80,7 @@ public abstract class Transport<T extends Driver> implements Competing {
     public abstract void finishMove();
     public abstract Type getType();
     public abstract void printType();
-    abstract boolean passDiagnostics() throws TransportTypeException;
-
-
+    public abstract void passDiagnostics();
 
     @Override
     public String toString() {
