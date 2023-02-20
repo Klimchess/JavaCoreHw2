@@ -1,6 +1,7 @@
 import transport.*;
 
 public class Main {
+
     public static void main(String[] args) {
         for (int i = 1; i <= 4; i++) {
             DriverB driverB = new DriverB("Driver cat B №" + i,
@@ -29,22 +30,19 @@ public class Main {
             printInfo(truck);
         }
     }
-    private static void printInfo(Transport<?> transport){
-        System.out.println(passDiagnostics(transport));
+    private static void printInfo(Transport bus){
+        System.out.println(passDiagnostics(bus));
     }
 
-    static boolean passDiagnostics(Transport<?> bus) throws TransportTypeException {
+    public static boolean passDiagnostics(Transport bus) throws TransportTypeException {
         bus = new Bus("1","трактор", 4.1, new DriverD("Иван", true, 10));
-        try {throw new TransportTypeException("Автобус прошёл диагностику");
+        try {System.out.println(bus);
         }
          catch (TransportTypeException e) {
-            System.out.println("Автобусы не должны проходить диагностику");
+            System.out.println(e.getMessage());
         }
-        finally {
-            System.out.println(bus);
-        }
-        return true;
-    }
 
+        return false;
+    }
 
 }

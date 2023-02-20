@@ -38,7 +38,7 @@ public class Bus extends Transport<DriverD> {
     public boolean passDiagnostics() throws TransportTypeException { try {
         throw new TransportTypeException("Автобусы диагностику проходить не должны");}
         catch (TransportTypeException e) {
-        System.out.println("Автобусы не должны проходить проверку");
+        System.out.println(e);
     }
         return false;
     }
