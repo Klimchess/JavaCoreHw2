@@ -29,9 +29,21 @@ public class Main {
             printInfo(truck);
         }
     }
+    private static void printInfo(Transport<?> transport){
+        System.out.println(passDiagnostics(transport));
+    }
 
-    private static void printInfo(Transport<?> transport) {
-        System.out.println(transport.passDiagnostics());
+    static boolean passDiagnostics(Transport<?> bus) throws TransportTypeException {
+        bus = new Bus("1","трактор", 4.1, new DriverD("Иван", true, 10));
+        try {throw new TransportTypeException("Автобус прошёл диагностику");
+        }
+         catch (TransportTypeException e) {
+            System.out.println("Автобусы не должны проходить диагностику");
+        }
+        finally {
+            System.out.println(bus);
+        }
+        return true;
     }
 
 
