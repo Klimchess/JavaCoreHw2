@@ -35,13 +35,11 @@ public class Bus extends Transport<DriverD> {
     }
 
     @Override
-    public boolean passDiagnostics() throws TransportTypeException { try {
-        throw new TransportTypeException("Автобусы диагностику проходить не должны");}
-        catch (TransportTypeException e) {
-        System.out.println(e);
+    public void passDiagnostics() throws TransportTypeException {
+        throw new TransportTypeException("Автобусы диагностику проходить не должны");
     }
-        return false;
-    }
+
+
 
     @Override
     public void pitStop() {

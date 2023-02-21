@@ -21,9 +21,6 @@ public abstract class Transport<T extends Driver> implements Competing {
         setEngineVolume(engineVolume);
         setDriver(driver);
     }
-    public boolean setDiagnosticsPassed(boolean diagnosticsPassed) {
-        return diagnosticsPassed;
-    }
     public Size getSize() {
         return size;
     }
@@ -80,13 +77,12 @@ public abstract class Transport<T extends Driver> implements Competing {
     public abstract void finishMove();
     public abstract Type getType();
     public abstract void printType();
-    public abstract boolean passDiagnostics();
+    public abstract void passDiagnostics();
 
     @Override
     public String toString() {
         return "Марка: " + brand + ", "
                 + "модель:" + model + ", "
-                + "объем двигателя " + engineVolume +
-                " " + passDiagnostics();
+                + "объем двигателя " + engineVolume;
     }
 }
