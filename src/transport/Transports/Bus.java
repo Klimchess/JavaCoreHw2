@@ -1,10 +1,18 @@
-package transport;
+package transport.Transports;
+
+import transport.Mechanic;
+import transport.Size;
+import transport.TransportTypeException;
+import transport.Type;
+import transport.driver.DriverD;
+
+import java.util.List;
 
 public class Bus extends Transport<DriverD> {
 
 
-    public Bus(String brand, String model, double engineVolume, DriverD driver) {
-        super(brand, model, engineVolume, driver);
+    public Bus(String brand, String model, double engineVolume, DriverD driver, List<Mechanic> mechanicList) {
+        super(brand, model, engineVolume, driver, mechanicList);
     }
 
     public void startMove() {

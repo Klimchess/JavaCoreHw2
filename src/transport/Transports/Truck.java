@@ -1,10 +1,17 @@
-package transport;
+package transport.Transports;
+
+import transport.*;
+import transport.Transports.Transport;
+import transport.driver.DriverC;
+
+import java.util.List;
 
 public class Truck extends Transport<DriverC> {
 
-    public Truck(String brand, String model, double engineVolume, DriverC driver, BodyType bodyType, Size size) {
-        super(brand, model, engineVolume, driver);
+    public Truck(String brand, String model, double engineVolume, DriverC driver, List<Mechanic> mechanicList) {
+        super(brand, model, engineVolume, driver, mechanicList);
     }
+
     public void startMove() {
         System.out.println("Грузовик марки " + getBrand() + " начал движение");
     }

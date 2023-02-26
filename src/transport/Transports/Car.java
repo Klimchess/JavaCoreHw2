@@ -1,11 +1,15 @@
-package transport;
+package transport.Transports;
+
+import transport.BodyType;
+import transport.Mechanic;
+import transport.Type;
+import transport.driver.DriverB;
+
+import java.util.List;
 
 public class Car extends Transport<DriverB> {
-    public Car(String brand,
-               String model,
-               double engineVolume,
-               DriverB driver) {
-        super(brand, model, engineVolume, driver);
+    public Car(String brand, String model, double engineVolume, DriverB driver, List<Mechanic> mechanicList) {
+        super(brand, model, engineVolume, driver, mechanicList);
     }
 
     @Override
