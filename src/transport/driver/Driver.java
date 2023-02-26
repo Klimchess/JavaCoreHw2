@@ -1,5 +1,7 @@
 package transport.driver;
 
+import java.util.Objects;
+
 public abstract class Driver {
     private String name;
     private boolean hasDriverLicence;
@@ -38,5 +40,16 @@ public abstract class Driver {
 
     public void setExperienceInYears(int experienceInYears) {
         this.experienceInYears = experienceInYears;
+    }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return Objects.equals(name, driver.name) && Objects.equals(hasDriverLicence, driver.hasDriverLicence) && Objects.equals(experienceInYears, driver.experienceInYears);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, hasDriverLicence, experienceInYears);
     }
 }
