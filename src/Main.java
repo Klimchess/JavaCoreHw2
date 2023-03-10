@@ -8,15 +8,13 @@ import transport.driver.DriverB;
 import transport.driver.DriverC;
 import transport.driver.DriverD;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
         List<Transport> transports = new ArrayList<>();
+        Set<Driver> driverList = new HashSet<>();
         for (int i = 1; i <= 4; i++) {
             DriverB driverB = new DriverB("Driver cat B №" + i,
                     true,
@@ -49,13 +47,14 @@ public class Main {
             transports.add(truck);
             transports.add(bus);
 
-            Set<Driver> driverList = new HashSet<>();
+
             driverList.add(driverB);
             driverList.add(driverC);
             driverList.add(driverD);
-            for (Driver driver : driverList) {
-                System.out.println(driver.getName());
-            }
+        }
+        Iterator<Driver> iterator = driverList.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next().getName());
         }
     }
     private static void printInfo(Transport transport){
