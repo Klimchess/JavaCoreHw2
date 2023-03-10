@@ -1,15 +1,23 @@
-package transport;
+package transport.Transports;
 
-public abstract class Transport<T extends Driver> implements Competing {
+import transport.*;
+import transport.driver.Driver;
+
+import java.awt.*;
+import java.util.List;
+
+public abstract class Transport implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
-    private T driver;
+    private  Driver driver;
     private BodyType bodyType;
     private Size size;
     private LoadCapacity loadCapacity;
 
-    public Transport(String brand, String model, double engineVolume, T driver) {
+    private List<Mechanic>mechanicList;
+
+    public Transport(String brand, String model, double engineVolume, Driver driver, List<Mechanic>mechanicList) {
         this.brand = brand;
         if (brand == null || brand.isEmpty()) {
             brand = "default";
@@ -20,7 +28,17 @@ public abstract class Transport<T extends Driver> implements Competing {
         }
         setEngineVolume(engineVolume);
         setDriver(driver);
+        this.mechanicList = mechanicList;
     }
+
+    public List<Mechanic> getMechanicList() {
+        return mechanicList;
+    }
+
+    public void setMechanicList(List<Mechanic> mechanicList) {
+        this.mechanicList = mechanicList;
+    }
+
     public Size getSize() {
         return size;
     }
@@ -64,11 +82,11 @@ public abstract class Transport<T extends Driver> implements Competing {
         this.engineVolume = engineVolume;
     }
 
-    public T getDriver() {
+    public Driver getDriver() {
         return driver;
     }
 
-    public void setDriver(T driver) {
+    public void setDriver(Driver driver) {
         this.driver = driver;
     }
 
@@ -83,6 +101,17 @@ public abstract class Transport<T extends Driver> implements Competing {
     public String toString() {
         return "Марка: " + brand + ", "
                 + "модель:" + model + ", "
-                + "объем двигателя " + engineVolume;
+                + "объем двигателя " + engineVolume +
+                ", mechanicList=" + mechanicList;
+    }
+
+    public boolean checkAbilityToGoInspection() {
+        try {
+        passDiagnostics();
+    } catch (TransportTypeException e) {
+        return false;
+    }
+        return true;
+
     }
 }
