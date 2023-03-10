@@ -7,8 +7,8 @@ import transport.driver.DriverB;
 
 import java.util.List;
 
-public class Car extends Transport<DriverB> {
-    public Car(String brand, String model, double engineVolume, DriverB driver, List<Mechanic> mechanicList) {
+public class Car<T extends DriverB> extends Transport {
+    public Car(String brand, String model, double engineVolume, T driver, List<Mechanic> mechanicList) {
         super(brand, model, engineVolume, driver, mechanicList);
     }
 

@@ -6,18 +6,18 @@ import transport.driver.Driver;
 import java.awt.*;
 import java.util.List;
 
-public abstract class Transport<T extends Driver> implements Competing {
+public abstract class Transport implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
-    private T driver;
+    private  Driver driver;
     private BodyType bodyType;
     private Size size;
     private LoadCapacity loadCapacity;
 
     private List<Mechanic>mechanicList;
 
-    public Transport(String brand, String model, double engineVolume, T driver, List<Mechanic>mechanicList) {
+    public Transport(String brand, String model, double engineVolume, Driver driver, List<Mechanic>mechanicList) {
         this.brand = brand;
         if (brand == null || brand.isEmpty()) {
             brand = "default";
@@ -82,11 +82,11 @@ public abstract class Transport<T extends Driver> implements Competing {
         this.engineVolume = engineVolume;
     }
 
-    public T getDriver() {
+    public Driver getDriver() {
         return driver;
     }
 
-    public void setDriver(T driver) {
+    public void setDriver(Driver driver) {
         this.driver = driver;
     }
 

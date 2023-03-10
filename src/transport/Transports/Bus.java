@@ -8,10 +8,10 @@ import transport.driver.DriverD;
 
 import java.util.List;
 
-public class Bus extends Transport<DriverD> {
+public class Bus<T extends DriverD> extends Transport{
 
 
-    public Bus(String brand, String model, double engineVolume, DriverD driver, List<Mechanic> mechanicList) {
+    public Bus(String brand, String model, double engineVolume, T driver, List<Mechanic> mechanicList) {
         super(brand, model, engineVolume, driver, mechanicList);
     }
 

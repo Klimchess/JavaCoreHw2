@@ -11,10 +11,10 @@ public class Mechanic {
         this.company = company;
     }
 
-    public void ConductTechService(){
+    public void conductTechService(){
         System.out.println("Механик провел техобслуживание");
     };
-    public void FixTheCar(){
+    public void fixTheCar(){
         System.out.println("Механик починил машину");
     }
 

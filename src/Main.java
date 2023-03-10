@@ -42,6 +42,12 @@ public class Main {
                     "Bus model N" + i,
                     4.1,
                     driverD, List.of(mechanicBus));
+            printInfo(car);
+            printInfo(bus);
+            printInfo(truck);
+            transports.add(car);
+            transports.add(truck);
+            transports.add(bus);
 
             Set<Driver> driverList = new HashSet<>();
             driverList.add(driverB);
@@ -52,6 +58,11 @@ public class Main {
             }
         }
     }
+    private static void printInfo(Transport transport){
+      System.out.println(transport);
+    }
+
+
+
+
 }
-
-

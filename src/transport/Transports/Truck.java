@@ -6,9 +6,9 @@ import transport.driver.DriverC;
 
 import java.util.List;
 
-public class Truck extends Transport<DriverC> {
+public class Truck<T extends DriverC> extends Transport {
 
-    public Truck(String brand, String model, double engineVolume, DriverC driver, List<Mechanic> mechanicList) {
+    public Truck(String brand, String model, double engineVolume, T driver, List<Mechanic> mechanicList) {
         super(brand, model, engineVolume, driver, mechanicList);
     }
 
